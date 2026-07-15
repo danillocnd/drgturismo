@@ -1424,9 +1424,20 @@ function initNav(){
 
   document.getElementById('hamburger').addEventListener('click', () => {
     document.getElementById('mobileMenu').classList.toggle('open');
+    document.getElementById('mobileBackdrop').classList.toggle('open');
+    document.getElementById('hamburger').classList.toggle('open');
+  });
+  document.getElementById('mobileBackdrop').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.remove('open');
+    document.getElementById('mobileBackdrop').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
   });
   document.querySelectorAll('.drg-mobile-menu a').forEach(a => {
-    a.addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'));
+    a.addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.remove('open');
+      document.getElementById('mobileBackdrop').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('open');
+    });
   });
 
   document.querySelectorAll('[data-lang-toggle]').forEach(btn => {
