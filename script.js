@@ -1336,7 +1336,7 @@ function renderAll(){
       : `${t('verMaisPasseios')} (+${PACKAGES.length - 8}) ↓`;
   });
   document.querySelectorAll('[data-faq-toggle-label]').forEach(btn => {
-    btn.textContent = showAllFaq ? t('faqVerMenos') : t('faqVerMais');
+    btn.innerHTML = showAllFaq ? `${t('faqVerMenos')} ↑` : `${t('faqVerMais')} ↓`;
   });
 }
 
