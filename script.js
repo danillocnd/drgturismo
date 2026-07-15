@@ -16,7 +16,7 @@ const STR = {
   sobreCta:{pt:'Ver passeios',es:'Ver paseos'},
   pacotesLabel:{pt:'Passeios em destaque',es:'Paseos destacados'},
   pacotesTitle:{pt:'Os favoritos de quem visita a Tríplice Fronteira',es:'Los favoritos de quienes visitan la Triple Frontera'},
-  verMais:{pt:'Saiba mais',es:'Saber más'},
+  verMais:{pt:'Reserve já',es:'Reserve ya'},
   verMaisPasseios:{pt:'Ver mais passeios',es:'Ver más paseos'},
   verMenosPasseios:{pt:'Ver menos',es:'Ver menos'},
   depoLabel:{pt:'Depoimentos',es:'Opiniones'},
@@ -42,7 +42,10 @@ const STR = {
   footerLinks:{pt:'Links rápidos',es:'Enlaces rápidos'},
   footerContact:{pt:'Contato',es:'Contacto'},
   footerRights:{pt:'Todos os direitos reservados.',es:'Todos los derechos reservados.'},
-  footerTagline:{pt:'Turismo na Tríplice Fronteira com quem entende do assunto.',es:'Turismo en la Triple Frontera con quien entiende del tema.'}
+  footerTagline:{pt:'Turismo na Tríplice Fronteira com quem entende do assunto.',es:'Turismo en la Triple Frontera con quien entiende del tema.'},
+  instaTitle:{pt:'Já somos mais de 294 pessoas conectadas no Instagram!',es:'¡Ya somos más de 294 personas conectadas en Instagram!'},
+  instaBody:{pt:'Acompanhe os bastidores dos nossos passeios pela Tríplice Fronteira: fotos reais de clientes, dicas de roteiro e novidades da DRGTUR direto no feed.',es:'Siga los bastidores de nuestros paseos por la Triple Frontera: fotos reales de clientes, consejos de itinerario y novedades de DRGTUR directo en el feed.'},
+  instaCta:{pt:'Seguir Instagram',es:'Seguir Instagram'}
 };
 
 const PACKAGES = [
@@ -192,7 +195,7 @@ function renderTestimonials(){
 
 function renderFaq(){
   const wrap = document.getElementById('faqList');
-  const list = showAllFaq ? FAQ : FAQ.slice(0, 6);
+  const list = showAllFaq ? FAQ : FAQ.slice(0, 7);
   wrap.innerHTML = list.map((f, i) => `
     <div class="drg-faq-item ${i === faqOpen ? 'open' : ''}" data-faq-index="${i}">
       <div class="drg-faq-q"><span>${f.q[lang]}</span><span class="drg-faq-sign">+</span></div>
@@ -203,6 +206,7 @@ function renderFaq(){
       const i = Number(item.dataset.faqIndex);
       faqOpen = faqOpen === i ? -1 : i;
       renderFaq();
+      setTimeout(() => window._drgFaqHeightSync && window._drgFaqHeightSync(), 60);
     });
   });
 }
@@ -258,7 +262,7 @@ function initPackagesToggle(){
 
 function initFaqToggle(){
   document.querySelectorAll('[data-faq-toggle-label]').forEach(btn => {
-    btn.addEventListener('click', () => { showAllFaq = !showAllFaq; faqOpen = 0; renderFaq(); renderAll(); });
+    btn.addEventListener('click', () => { showAllFaq = !showAllFaq; faqOpen = 0; renderFaq(); renderAll(); setTimeout(() => window._drgFaqHeightSync && window._drgFaqHeightSync(), 60); });
   });
 }
 
@@ -307,6 +311,21 @@ function initHeroVideo(){
   v.addEventListener('loadeddata', tryPlay);
 }
 
+function initFaqHeightSync(){
+  const photo = document.getElementById('faqPhoto');
+  const questions = document.getElementById('faqQuestions');
+  if (!photo || !questions) return;
+  const sync = () => {
+    if (window.innerWidth <= 900) { photo.style.height = ''; return; }
+    const h = Math.min(questions.scrollHeight, 420);
+    if (photo.style.height !== h + 'px') photo.style.height = h + 'px';
+  };
+  new ResizeObserver(sync).observe(questions);
+  window.addEventListener('resize', sync);
+  setTimeout(sync, 50);
+  window._drgFaqHeightSync = sync;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   renderAll();
   initNav();
@@ -315,4 +334,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initReveal();
   initForm();
   initHeroVideo();
+  initFaqHeightSync();
 });

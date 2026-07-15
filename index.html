@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script src="image-slot.js"></script>
 </head>
 <body>
 
@@ -71,10 +72,26 @@
       <div class="drg-bullets" id="sobreBullets"></div>
       <a class="drg-dark-cta" href="#pacotes" data-t="sobreCta"></a>
     </div>
-    <div class="drg-sobre-imgs">
-      <div class="drg-sobre-img1"><img src="assets/compras-paraguai.png" alt="Compras no Paraguai"></div>
-      <div class="drg-sobre-img2"><img src="assets/jantar.png" alt="Jantar"></div>
-      <div class="drg-sobre-img3"><img src="assets/casino.png" alt="By Night Argentina"></div>
+    <div class="drg-sobre-mosaic">
+      <div class="drg-mosaic-1"><img src="assets/compras-paraguai.png" alt="Compras no Paraguai"></div>
+      <div class="drg-mosaic-2"><img src="assets/jantar.png" alt="Jantar"></div>
+      <div class="drg-mosaic-3"><img src="assets/casino.png" alt="By Night Argentina"></div>
+    </div>
+  </div>
+
+  <!-- ============ INSTAGRAM ============ -->
+  <div class="drg-reveal drg-insta" data-reveal>
+    <div class="drg-insta-posts">
+      <div class="drg-insta-card drg-insta-card-1"><img src="assets/instagram-post-mockup.png" alt="Post do Instagram" style="width:100%;height:100%;object-fit:contain;display:block"></div>
+      <div class="drg-insta-card drg-insta-card-2"><img src="assets/instagram-post-mockup.png" alt="Post do Instagram" style="width:100%;height:100%;object-fit:contain;display:block"></div>
+    </div>
+    <div>
+      <h2 class="drg-h2" style="font-size:clamp(22px,3vw,28px)" data-t="instaTitle"></h2>
+      <p class="drg-body" data-t="instaBody"></p>
+      <a class="drg-insta-cta" href="https://www.instagram.com/drgtur/" target="_blank">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"></circle></svg>
+        <span data-t="instaCta"></span>
+      </a>
     </div>
   </div>
 
@@ -105,11 +122,11 @@
 
   <!-- ============ FAQ ============ -->
   <div class="drg-reveal drg-faq" data-reveal>
-    <div>
+    <div class="drg-faq-left">
       <div class="drg-label" data-t="faqLabel"></div>
       <h2 class="drg-h2" data-t="faqTitle"></h2>
-      <div class="drg-faq-photo">
-        <img src="assets/faq-motorista.png" alt="Equipe DRGTUR">
+      <div class="drg-faq-photo" id="faqPhoto">
+        <img src="assets/faq-motorista3.png" alt="Equipe DRGTUR">
         <div class="drg-faq-photo-grad"></div>
         <div class="drg-faq-photo-text">
           <div style="font:700 14px 'Work Sans';margin-bottom:4px" data-t="faqContactTitle"></div>
@@ -117,7 +134,7 @@
         </div>
       </div>
     </div>
-    <div>
+    <div id="faqQuestions" style="align-self:start">
       <div id="faqList"></div>
       <button class="drg-outline-btn" style="margin-top:24px;border-color:oklch(80% 0.01 90);color:oklch(20% 0.03 235)" data-faq-toggle-label></button>
     </div>
@@ -172,6 +189,14 @@
             <div>+55 45 8813-5191</div>
             <div>contato@drgtur.com.br</div>
             <div>Foz do Iguaçu, PR</div>
+          </div>
+          <div style="display:flex;gap:12px;margin-top:16px">
+            <a href="https://www.instagram.com/drgtur/" target="_blank" aria-label="Instagram" class="drg-social-icon">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"></circle></svg>
+            </a>
+            <a href="https://www.facebook.com/people/Drgtur-Exclusive-Travel/61586903835999/" target="_blank" aria-label="Facebook" class="drg-social-icon">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 8.5h2.5V5h-2.5c-2.2 0-4 1.8-4 4v2H9v3.5h2v6.5h3.5V14.5H17l.5-3.5h-3V9c0-.6.4-.5 1-.5z"></path></svg>
+            </a>
           </div>
         </div>
       </div>
