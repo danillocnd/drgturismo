@@ -1204,12 +1204,13 @@ const STR = {
   navDepo:{pt:'Depoimentos',es:'Opiniones'},
   navContato:{pt:'Contato',es:'Contacto'},
   navWhats:{pt:'Fale conosco',es:'Fale conosco'},
-  badge: {pt:'Tríplice Fronteira · Brasil · Argentina · Paraguai', es:'Triple Frontera · Brasil · Argentina · Paraguay'},
+  badge: {pt:'Experiências sem fronteiras', es:'Experiencias sin fronteras'},
+  scrollLabel:{pt:'Role para descobrir',es:'Desliza para descubrir'},
   heroTitlePlain:{pt:'Viva a Tríplice Fronteira com',es:'Viva la Triple Frontera con'},
   heroTitleAccent:{pt:'conforto, segurança e leveza',es:'confort, seguridad y tranquilidad'},
   heroSub:{pt:'Roteiros personalizados entre Brasil, Argentina e Paraguai — do primeiro contato até a última foto.',es:'Itinerarios personalizados entre Brasil, Argentina y Paraguay — desde el primer contacto hasta la última foto.'},
   ctaOrc:{pt:'Reserve Já',es:'Reserve Ya'},
-  sobreLabel:{pt:'Sobre a DRGTUR',es:'Sobre DRGTUR'},
+  sobreLabel:{pt:'Sobre a DRtuR',es:'Sobre DRtuR'},
   sobreTitle:{pt:'Mais do que passeios, uma experiência cuidada do início ao fim',es:'Más que paseos, una experiencia cuidada de principio a fin'},
   sobreBody:{pt:'Trabalhamos com destinos no Brasil, Argentina e Paraguai, criando roteiros sob medida para o perfil de cada viajante. Nosso compromisso é com a praticidade, a segurança e a tranquilidade — para que cada experiência seja leve, especial e inesquecível.',es:'Trabajamos con destinos en Brasil, Argentina y Paraguay, creando itinerarios a medida según el perfil de cada viajero. Nuestro compromiso es con la practicidad, la seguridad y la tranquilidad — para que cada experiencia sea liviana, especial e inolvidable.'},
   sobreCta:{pt:'Ver passeios',es:'Ver paseos'},
@@ -1229,6 +1230,11 @@ const STR = {
   formLabel:{pt:'Vamos planejar sua viagem',es:'Planifiquemos su viaje'},
   formTitle:{pt:'Peça um orçamento sem compromisso',es:'Pida un presupuesto sin compromiso'},
   formSub:{pt:'Responda em poucos minutos e receba seu roteiro personalizado direto no WhatsApp.',es:'Responda en pocos minutos y reciba su itinerario personalizado directo por WhatsApp.'},
+  contactCardLabel:{pt:'Atendimento',es:'Atención'},
+  contactCardWhats:{pt:'Falar no WhatsApp →',es:'Hablar por WhatsApp →'},
+  chFormTitle:{pt:'Formulário',es:'Formulario'},
+  chFormSub:{pt:'Preencha e entramos em contato',es:'Complete y nos pondremos en contacto'},
+  chWhatsSub:{pt:'Resposta rápida e direta',es:'Respuesta rápida y directa'},
   fieldNome:{pt:'Nome completo',es:'Nombre completo'},
   fieldWhats:{pt:'WhatsApp',es:'WhatsApp'},
   fieldDestino:{pt:'Destino de interesse',es:'Destino de interés'},
@@ -1243,7 +1249,7 @@ const STR = {
   footerRights:{pt:'Todos os direitos reservados.',es:'Todos los derechos reservados.'},
   footerTagline:{pt:'Turismo na Tríplice Fronteira com quem entende do assunto.',es:'Turismo en la Triple Frontera con quien entiende del tema.'},
   instaTitle:{pt:'Já somos mais de 294 pessoas conectadas no Instagram!',es:'¡Ya somos más de 294 personas conectadas en Instagram!'},
-  instaBody:{pt:'Acompanhe os bastidores dos nossos passeios pela Tríplice Fronteira: fotos reais de clientes, dicas de roteiro e novidades da DRGTUR direto no feed.',es:'Siga los bastidores de nuestros paseos por la Triple Frontera: fotos reales de clientes, consejos de itinerario y novedades de DRGTUR directo en el feed.'},
+  instaBody:{pt:'Acompanhe os bastidores dos nossos passeios pela Tríplice Fronteira: fotos reais de clientes, dicas de roteiro e novidades da DRtuR direto no feed.',es:'Siga los bastidores de nuestros paseos por la Triple Frontera: fotos reales de clientes, consejos de itinerario y novedades de DRtuR directo en el feed.'},
   instaCta:{pt:'Seguir Instagram',es:'Seguir Instagram'}
 };
 
@@ -1294,13 +1300,13 @@ const TESTIMONIALS = [
 
 const FAQ = [
   {q:{pt:'Quais documentos posso usar para entrar na Argentina?', es:'¿Qué documentos puedo usar para entrar a Argentina?'}, a:{pt:'Você pode apresentar um dos seguintes: RG emitido há menos de 10 anos, Passaporte válido ou CNH física dentro da validade.', es:'Puede presentar uno de los siguientes: documento de identidad emitido hace menos de 10 años, pasaporte válido o licencia de conducir física vigente.'}},
-  {q:{pt:'Os transportes da DRGTUR têm fila preferencial para entrar na Argentina?', es:'¿Los transportes de DRGTUR tienen fila preferencial para entrar a Argentina?'}, a:{pt:'Sim! Nossos veículos têm preferência na fila de imigração. Confirme sua reserva e aproveite melhor o seu tempo de passeio.', es:'¡Sí! Nuestros vehículos tienen preferencia en la fila de inmigración. Confirme su reserva y aproveche mejor su tiempo de paseo.'}},
+  {q:{pt:'Os transportes da DRtuR têm fila preferencial para entrar na Argentina?', es:'¿Los transportes de DRtuR tienen fila preferencial para entrar a Argentina?'}, a:{pt:'Sim! Nossos veículos têm preferência na fila de imigração. Confirme sua reserva e aproveite melhor o seu tempo de passeio.', es:'¡Sí! Nuestros vehículos tienen preferencia en la fila de inmigración. Confirme su reserva y aproveche mejor su tiempo de paseo.'}},
   {q:{pt:'E para entrar no Paraguai, é o mesmo processo?', es:'¿Y para entrar a Paraguay es el mismo proceso?'}, a:{pt:'Não é necessário o mesmo procedimento de imigração da Argentina. Porém, para realizar compras em determinadas lojas, é preciso apresentar RG ou passaporte.', es:'No es necesario el mismo procedimiento de inmigración que en Argentina. Sin embargo, para realizar compras en determinadas tiendas, es necesario presentar documento de identidad o pasaporte.'}},
   {q:{pt:'Qual a cota de compras no Paraguai?', es:'¿Cuál es la cuota de compras en Paraguay?'}, a:{pt:'US$ 500 por pessoa.', es:'US$ 500 por persona.'}},
-  {q:{pt:'É possível conhecer os 3 países em um único dia?', es:'¿Es posible conocer los 3 países en un solo día?'}, a:{pt:'Sim, é possível! Conte com a DRGTUR e venha desbravar a Tríplice Fronteira com quem entende do assunto.', es:'¡Sí, es posible! Cuente con DRGTUR y venga a descubrir la Triple Frontera con quien entiende del tema.'}},
-  {q:{pt:'A DRGTUR também emite ingressos para os atrativos?', es:'¿DRGTUR también emite entradas para las atracciones?'}, a:{pt:'Sim! Ao fechar seu transporte conosco, a emissão de ingressos é cortesia — cuidamos de tudo para você, inclusive com sugestões de horários e melhor logística do dia.', es:'¡Sí! Al contratar su transporte con nosotros, la emisión de entradas es cortesía — cuidamos de todo por usted, incluso con sugerencias de horarios y la mejor logística del día.'}},
-  {q:{pt:'A DRGTUR tem roteiro fixo? Vou com pessoas desconhecidas?', es:'¿DRGTUR tiene un itinerario fijo? ¿Voy con personas desconocidas?'}, a:{pt:'Não! Você escolhe os atrativos que quer conhecer e montamos um roteiro 100% personalizado para você e seu grupo.', es:'¡No! Usted elige las atracciones que quiere conocer y armamos un itinerario 100% personalizado para usted y su grupo.'}},
-  {q:{pt:'Como funcionam os transportes da DRGTUR?', es:'¿Cómo funcionan los transportes de DRGTUR?'}, a:{pt:'São todos privativos — exclusivos para você, seguindo o roteiro que vocês escolherem. Conte com nossa equipe para dicas e o melhor aproveitamento do seu passeio!', es:'Son todos privados — exclusivos para usted, siguiendo el itinerario que ustedes elijan. ¡Cuente con nuestro equipo para consejos y el mejor aprovechamiento de su paseo!'}},
+  {q:{pt:'É possível conhecer os 3 países em um único dia?', es:'¿Es posible conocer los 3 países en un solo día?'}, a:{pt:'Sim, é possível! Conte com a DRtuR e venha desbravar a Tríplice Fronteira com quem entende do assunto.', es:'¡Sí, es posible! Cuente con DRtuR y venga a descubrir la Triple Frontera con quien entiende del tema.'}},
+  {q:{pt:'A DRtuR também emite ingressos para os atrativos?', es:'¿DRtuR también emite entradas para las atracciones?'}, a:{pt:'Sim! Ao fechar seu transporte conosco, a emissão de ingressos é cortesia — cuidamos de tudo para você, inclusive com sugestões de horários e melhor logística do dia.', es:'¡Sí! Al contratar su transporte con nosotros, la emisión de entradas es cortesía — cuidamos de todo por usted, incluso con sugerencias de horarios y la mejor logística del día.'}},
+  {q:{pt:'A DRtuR tem roteiro fixo? Vou com pessoas desconhecidas?', es:'¿DRtuR tiene un itinerario fijo? ¿Voy con personas desconocidas?'}, a:{pt:'Não! Você escolhe os atrativos que quer conhecer e montamos um roteiro 100% personalizado para você e seu grupo.', es:'¡No! Usted elige las atracciones que quiere conocer y armamos un itinerario 100% personalizado para usted y su grupo.'}},
+  {q:{pt:'Como funcionam os transportes da DRtuR?', es:'¿Cómo funcionan los transportes de DRtuR?'}, a:{pt:'São todos privativos — exclusivos para você, seguindo o roteiro que vocês escolherem. Conte com nossa equipe para dicas e o melhor aproveitamento do seu passeio!', es:'Son todos privados — exclusivos para usted, siguiendo el itinerario que ustedes elijan. ¡Cuente con nuestro equipo para consejos y el mejor aprovechamiento de su paseo!'}},
   {q:{pt:'É necessário levar capa de chuva para as Cataratas?', es:'¿Es necesario llevar impermeable para las Cataratas?'}, a:{pt:'A melhor sugestão é levar uma muda de roupa: assim você sente a energia das cataratas e pode se molhar à vontade!', es:'La mejor sugerencia es llevar una muda de ropa: ¡así siente la energía de las cataratas y puede mojarse a gusto!'}},
   {q:{pt:'Quantos dias preciso para conhecer todos os atrativos da região, incluindo Argentina e Paraguai?', es:'¿Cuántos días necesito para conocer todas las atracciones de la región, incluyendo Argentina y Paraguay?'}, a:{pt:'O ideal são 5 dias, para aproveitar com calma e sem correria.', es:'Lo ideal son 5 días, para aprovechar con calma y sin apuros.'}},
   {q:{pt:'Qual a melhor época para visitar Foz do Iguaçu?', es:'¿Cuál es la mejor época para visitar Foz de Iguazú?'}, a:{pt:'De setembro a abril, o clima é mais quente. De maio a agosto, as temperaturas ficam mais amenas. A região pode ser visitada o ano inteiro!', es:'De septiembre a abril, el clima es más cálido. De mayo a agosto, las temperaturas son más suaves. ¡La región puede visitarse todo el año!'}},
@@ -1321,6 +1327,10 @@ function t(key){ return STR[key][lang]; }
 // ============ RENDER ============
 function renderAll(){
   document.querySelectorAll('[data-t]').forEach(el => { el.textContent = t(el.dataset.t); });
+  decorateHeroTitle();
+  decorateSectionNumbers();
+  decorateSectionTitles();
+  renderBrandMarquee();
   document.querySelectorAll('.drg-lang-flag').forEach(el => { el.innerHTML = lang === 'pt' ? FLAG_PT : FLAG_ES; });
   document.querySelectorAll('.drg-flag-pt').forEach(el => { el.innerHTML = FLAG_PT; });
   document.querySelectorAll('.drg-flag-es').forEach(el => { el.innerHTML = FLAG_ES; });
@@ -1340,10 +1350,45 @@ function renderAll(){
   });
 }
 
+function decorateSectionNumbers(){
+  const order = ['sobreLabel','instaTitle','pacotesLabel','depoLabel','faqLabel','formLabel'];
+  let n = 0;
+  ['sobreLabel','pacotesLabel','depoLabel','faqLabel','formLabel'].forEach((key, i) => {
+    const el = document.querySelector(`[data-t="${key}"]`);
+    if (!el) return;
+    el.innerHTML = `<span class="drg-label-num">0${i+1} —</span>${t(key)}`;
+  });
+}
+
+function renderBrandMarquee(){
+  const track = document.getElementById('brandMarquee');
+  if (!track) return;
+  const phrase = lang === 'pt' ? 'Experiências sem fronteiras' : 'Experiencias sin fronteras';
+  const unit = `<span>${phrase}</span><span class="solid">•</span>`;
+  track.innerHTML = unit.repeat(6);
+}
+
+function decorateSectionTitles(){
+  ['sobreTitle','pacotesTitle','depoTitle','faqTitle','formTitle'].forEach(key => {
+    const el = document.querySelector(`[data-t="${key}"]`);
+    if (!el) return;
+    el.innerHTML = t(key).split(' ').map((w, i) => `<span class="drg-rword" style="--wi:${i}"><i>${w}</i></span>`).join(' ');
+  });
+}
+
+function decorateHeroTitle(){
+  let idx = 0;
+  ['heroTitlePlain','heroTitleAccent'].forEach(key => {
+    const el = document.querySelector(`[data-t="${key}"]`);
+    if (!el) return;
+    el.innerHTML = t(key).split(' ').map(w => `<span class="drg-word" style="--wi:${idx++}">${w}</span>`).join(' ');
+  });
+}
+
 function renderDiffs(){
   const wrap = document.getElementById('diffsBar');
-  wrap.innerHTML = DIFFS.map(d => `
-    <div class="drg-diff">
+  wrap.innerHTML = DIFFS.map((d, i) => `
+    <div class="drg-diff drg-stagger-item" style="--sd:${i*90}ms">
       <div>${DIFF_ICONS[d.icon]}</div>
       <div class="drg-diff-title">${d.title[lang]}</div>
       <div class="drg-diff-body">${d.body[lang]}</div>
@@ -1352,8 +1397,8 @@ function renderDiffs(){
 
 function renderSobreBullets(){
   const wrap = document.getElementById('sobreBullets');
-  wrap.innerHTML = SOBRE_BULLETS.map(b => `
-    <div class="drg-bullet">
+  wrap.innerHTML = SOBRE_BULLETS.map((b, i) => `
+    <div class="drg-bullet drg-stagger-item" style="--sd:${i*90}ms">
       <div class="drg-bullet-icon"><div></div></div>
       <div>
         <div class="drg-bullet-title">${b.title[lang]}</div>
@@ -1365,8 +1410,8 @@ function renderSobreBullets(){
 function renderPackages(){
   const wrap = document.getElementById('pacotesGrid');
   const list = showAllPackages ? PACKAGES : PACKAGES.slice(0, 8);
-  wrap.innerHTML = list.map(p => `
-    <div class="drg-card">
+  wrap.innerHTML = list.map((p, i) => `
+    <div class="drg-card drg-stagger-item" style="--sd:${(i%8)*70}ms">
       <div class="drg-card-img"><img src="${p.img}" alt="${p.name}" loading="lazy"></div>
       <div class="drg-card-body">
         <div class="drg-card-name">${p.name}</div>
@@ -1420,6 +1465,10 @@ function initNav(){
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 12);
+    const wf = document.querySelector('.drg-whats-float');
+    if (wf) wf.classList.toggle('scrolled', window.scrollY > 12);
+    const hero = document.querySelector('.drg-hero');
+    if (hero) hero.classList.toggle('drg-hide-copy', window.scrollY > window.innerHeight * 0.3);
   }, { passive: true });
 
   document.getElementById('hamburger').addEventListener('click', () => {
@@ -1486,6 +1535,11 @@ function initReveal(){
 }
 
 function initForm(){
+  const row = document.getElementById('channelForm');
+  const wrap = document.getElementById('channelFormWrap');
+  if (row && wrap){
+    row.addEventListener('click', () => wrap.classList.toggle('open'));
+  }
   document.getElementById('drgForm').addEventListener('submit', (e) => {
     e.preventDefault();
     const nome = document.getElementById('fieldNome').value.trim();
@@ -1495,7 +1549,7 @@ function initForm(){
     const data = document.getElementById('fieldData').value;
     const msg = document.getElementById('fieldMsg').value.trim();
     const lines = [
-      'Olá! Vim pelo site da DRGTUR e gostaria de um orçamento.',
+      'Olá! Vim pelo site da DRtuR e gostaria de um orçamento.',
       nome ? `Nome: ${nome}` : '',
       whats ? `WhatsApp: ${whats}` : '',
       destino ? `Destino de interesse: ${destino}` : '',
@@ -1536,6 +1590,52 @@ function initFaqHeightSync(){
   window._drgFaqHeightSync = sync;
 }
 
+function initCounter(){
+  const el = document.querySelector('[data-t="instaTitle"]');
+  if (!el) return;
+  let done = false;
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting && !done){
+        done = true; obs.disconnect();
+        const target = 294, dur = 1400, start = performance.now();
+        const step = now => {
+          const p = Math.min(1, (now - start) / dur);
+          const val = Math.round(target * (1 - Math.pow(1 - p, 3)));
+          el.textContent = t('instaTitle').replace('294', String(val));
+          if (p < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      }
+    });
+  }, { threshold: 0.4 });
+  obs.observe(el);
+}
+
+function initParallax(){
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const items = [];
+  document.querySelectorAll('.drg-mosaic-1,.drg-mosaic-2,.drg-mosaic-3').forEach((el, i) => {
+    items.push({ el, f: [0.05, -0.04, 0.045][i % 3], inner: false });
+  });
+  const faqImg = document.querySelector('.drg-faq-photo img');
+  if (faqImg) items.push({ el: faqImg, f: -0.05, inner: true });
+  let ticking = false;
+  const update = () => {
+    ticking = false;
+    const vh = innerHeight;
+    items.forEach(it => {
+      const r = it.el.getBoundingClientRect();
+      if (r.bottom < -100 || r.top > vh + 100) return;
+      const c = r.top + r.height / 2 - vh / 2;
+      const y = (-c * it.f).toFixed(1);
+      it.el.style.transform = it.inner ? `translateY(${y}px) scale(1.12)` : `translateY(${y}px)`;
+    });
+  };
+  addEventListener('scroll', () => { if (!ticking){ ticking = true; requestAnimationFrame(update); } }, { passive: true });
+  update();
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   renderAll();
   initNav();
@@ -1545,4 +1645,14 @@ document.addEventListener('DOMContentLoaded', () => {
   initForm();
   initHeroVideo();
   initFaqHeightSync();
+  initCounter();
+  const pre = document.getElementById('preloader');
+  if (pre){
+    setTimeout(() => {
+      pre.classList.add('done');
+      document.body.classList.add('drg-loaded');
+    }, 1500);
+  } else {
+    document.body.classList.add('drg-loaded');
+  }
 });

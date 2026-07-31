@@ -3,25 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DRGTUR — Turismo na Tríplice Fronteira</title>
+<title>DRtuR — Turismo na Tríplice Fronteira</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+<div class="drg-preloader" id="preloader"><img src="assets/logo-full.png" alt="DRtuR"></div>
 
 <div style="position:relative;width:100%;background:oklch(99% 0.003 90)">
 
   <!-- ============ NAV ============ -->
   <div class="drg-nav" id="nav">
     <div class="drg-nav-inner">
-      <div class="drg-logo">DRG<span>TUR</span></div>
+      <div class="drg-logo"><img src="assets/logo-full.png" alt="DRtuR"></div>
       <div class="drg-nav-links">
         <a class="drg-navlink" href="#sobre" data-t="navSobre"></a>
         <a class="drg-navlink" href="#pacotes" data-t="navPacotes"></a>
         <a class="drg-navlink" href="#depo" data-t="navDepo"></a>
         <a class="drg-navlink" href="#form" data-t="navContato"></a>
-        <a class="drg-nav-whats" target="_blank" data-t="navWhats" href="https://wa.me/554588135191?text=Ol%C3%A1%2C%20vim%20do%20site%20novo%20da%20DRGTUR%20e%20quero%20mais%20informa%C3%A7%C3%B5es"></a>
       </div>
       <div class="drg-mobile-actions">
         <div style="position:relative">
@@ -43,11 +44,11 @@
       <a href="#pacotes" data-t="navPacotes"></a>
       <a href="#depo" data-t="navDepo"></a>
       <a href="#form" data-t="navContato"></a>
-      <a class="drg-nav-whats" target="_blank" data-t="navWhats" href="https://wa.me/554588135191" style="text-align:center"></a>
     </div>
   </div>
 
   <!-- ============ HERO ============ -->
+  <div class="drg-stack-wrap">
   <div class="drg-hero">
     <video id="heroVideo" autoplay muted loop playsinline>
       <source src="assets/cataratas-hero-mobile.mp4" media="(max-width:760px)"></source>
@@ -63,10 +64,14 @@
       </div>
     </div>
     <div class="drg-reveal drg-diffs-bar" id="diffsBar" data-reveal></div>
+    <div class="drg-scroll-hint-wrap">
+      <div class="drg-scroll-hint"><span></span></div>
+      <div class="drg-scroll-label" data-t="scrollLabel"></div>
+    </div>
   </div>
 
   <!-- ============ SOBRE ============ -->
-  <div id="sobre" class="drg-reveal drg-sobre" data-reveal>
+  <div id="sobre" class="drg-reveal drg-rev-left drg-sobre" data-reveal>
     <div>
       <div class="drg-label" data-t="sobreLabel"></div>
       <h2 class="drg-h2" data-t="sobreTitle"></h2>
@@ -80,11 +85,12 @@
       <div class="drg-mosaic-3"><img src="assets/casino.png" alt="By Night Argentina"></div>
     </div>
   </div>
+  </div>
 
   <!-- ============ INSTAGRAM ============ -->
-  <div class="drg-reveal drg-insta" data-reveal>
+  <div class="drg-reveal drg-rev-right drg-insta" data-reveal>
     <div class="drg-insta-single">
-      <img src="assets/instagram-mockup-phone.png" alt="DRGTUR no Instagram">
+      <img src="assets/instagram-mockup-phone.png" alt="DRtuR no Instagram">
     </div>
     <div>
       <h2 class="drg-h2" style="font-size:clamp(22px,3vw,28px)" data-t="instaTitle"></h2>
@@ -112,6 +118,11 @@
 
   <!-- ============ DEPOIMENTOS ============ -->
   <div id="depo" class="drg-reveal drg-depo" data-reveal>
+    <video class="drg-depo-video" autoplay muted loop playsinline>
+      <source src="assets/cataratas-hero-mobile.mp4" media="(max-width:760px)"></source>
+      <source src="assets/cataratas-hero.mp4"></source>
+    </video>
+    <div class="drg-depo-veil"></div>
     <div class="drg-depo-head">
       <div class="drg-label" data-t="depoLabel"></div>
       <h2 class="drg-h2" data-t="depoTitle"></h2>
@@ -127,7 +138,7 @@
       <div class="drg-label" data-t="faqLabel"></div>
       <h2 class="drg-h2" data-t="faqTitle"></h2>
       <div class="drg-faq-photo" id="faqPhoto">
-        <img src="assets/faq-motorista3.png" alt="Equipe DRGTUR">
+        <img src="assets/faq-motorista3.png" alt="Equipe DRtuR">
         <div class="drg-faq-photo-grad"></div>
         <div class="drg-faq-photo-text">
           <div style="font:700 14px 'Work Sans';margin-bottom:4px" data-t="faqContactTitle"></div>
@@ -141,29 +152,74 @@
     </div>
   </div>
 
+  <!-- ============ MARQUEE BRAND ============ -->
+  <div class="drg-brand-marquee" aria-hidden="true">
+    <div class="drg-brand-marquee-track" id="brandMarquee"></div>
+  </div>
+
   <!-- ============ FORM ============ -->
   <div id="form" class="drg-reveal drg-form-section" data-reveal>
     <div class="drg-form-grid">
+      <div class="drg-contact-photo">
+        <img src="assets/marco-3-fronteiras.jpg" alt="Marco das 3 Fronteiras">
+        <div class="drg-contact-photo-grad"></div>
+        <div class="drg-contact-photo-text">
+          <div style="font:700 14px 'Montserrat';margin-bottom:4px" data-t="contactCardLabel"></div>
+          <a class="drg-contact-photo-link" target="_blank" href="https://wa.me/554588135191?text=Ol%C3%A1%2C%20vim%20do%20site%20da%20DRtuR%20e%20quero%20mais%20informa%C3%A7%C3%B5es" data-t="contactCardWhats"></a>
+        </div>
+      </div>
       <div class="drg-form-intro">
         <div class="drg-label" data-t="formLabel"></div>
         <h2 class="drg-h2" data-t="formTitle"></h2>
         <p data-t="formSub"></p>
-      </div>
-      <div class="drg-form-sent" data-t="sentMsg"></div>
-      <form id="drgForm" class="drg-form-card">
-        <div class="drg-field"><label data-t="fieldNome"></label><input id="fieldNome" type="text"></div>
-        <div class="drg-field"><label data-t="fieldWhats"></label><input id="fieldWhats" type="text"></div>
-        <div class="drg-field"><label data-t="fieldDestino"></label><select id="fieldDestinoSelect"></select></div>
-        <div class="drg-field">
-          <label data-t="fieldPessoas"></label>
-          <select id="fieldPessoas">
-            <option>1 pessoa</option><option>2 pessoas</option><option>3 pessoas</option><option>4 pessoas</option><option>5 pessoas</option><option>6 pessoas</option><option>7+ pessoas</option>
-          </select>
+        <div class="drg-channels">
+          <div class="drg-channel" id="channelForm">
+            <div>
+              <div class="drg-channel-title" data-t="chFormTitle"></div>
+              <div class="drg-channel-sub" data-t="chFormSub"></div>
+            </div>
+            <div class="drg-channel-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path><path d="M9 13h6M9 17h6"></path></svg></div>
+          </div>
+          <div class="drg-channel-form-wrap" id="channelFormWrap">
+            <div class="drg-form-sent" data-t="sentMsg"></div>
+            <form id="drgForm" class="drg-form-card">
+              <div class="drg-field"><label data-t="fieldNome"></label><input id="fieldNome" type="text"></div>
+              <div class="drg-field"><label data-t="fieldWhats"></label><input id="fieldWhats" type="text"></div>
+              <div class="drg-field"><label data-t="fieldDestino"></label><select id="fieldDestinoSelect"></select></div>
+              <div class="drg-field">
+                <label data-t="fieldPessoas"></label>
+                <select id="fieldPessoas">
+                  <option>1 pessoa</option><option>2 pessoas</option><option>3 pessoas</option><option>4 pessoas</option><option>5 pessoas</option><option>6 pessoas</option><option>7+ pessoas</option>
+                </select>
+              </div>
+              <div class="drg-field"><label data-t="fieldData"></label><input id="fieldData" type="date"></div>
+              <div class="drg-field"><label data-t="fieldMsg"></label><textarea id="fieldMsg" rows="3"></textarea></div>
+              <button class="drg-submit-btn" type="submit" data-t="submit"></button>
+            </form>
+          </div>
+          <a class="drg-channel" target="_blank" href="https://wa.me/554588135191?text=Ol%C3%A1%2C%20vim%20do%20site%20da%20DRtuR%20e%20quero%20mais%20informa%C3%A7%C3%B5es">
+            <div>
+              <div class="drg-channel-title">WhatsApp</div>
+              <div class="drg-channel-sub" data-t="chWhatsSub"></div>
+            </div>
+            <div class="drg-channel-icon"><svg width="17" height="17" viewBox="0 0 32 32" fill="currentColor"><path d="M16.001 5C9.9 5 4.9 9.9 4.9 16c0 2 .5 3.9 1.5 5.6L5 27l5.6-1.4c1.6.9 3.5 1.4 5.4 1.4 6.1 0 11.1-4.9 11.1-11S22.1 5 16.001 5Zm5.4 15.1c-.2.7-1.3 1.3-1.8 1.4-.5.1-1.1.1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 .9-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4-.1.6.5.2.5.8 1.9.8 2 .1.1.1.3 0 .5-.1.2-.1.3-.3.5l-.4.5c-.1.1-.3.3-.1.5.1.3.7 1.1 1.5 1.8 1 .9 1.9 1.2 2.2 1.3.3.1.4.1.6-.1.2-.2.7-.8.8-1 .2-.3.4-.2.6-.1.2.1 1.5.7 1.8.8.3.2.4.2.5.3.1.2.1.7-.1 1.4Z"></path></svg></div>
+          </a>
+          <a class="drg-channel" href="mailto:contato@drgtur.com.br">
+            <div>
+              <div class="drg-channel-title">E-mail</div>
+              <div class="drg-channel-sub">contato@drgtur.com.br</div>
+            </div>
+            <div class="drg-channel-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"></rect><path d="m3 6 9 7 9-7"></path></svg></div>
+          </a>
+          <a class="drg-channel" target="_blank" href="https://www.instagram.com/drgtur/">
+            <div>
+              <div class="drg-channel-title">Instagram</div>
+              <div class="drg-channel-sub">@drgtur</div>
+            </div>
+            <div class="drg-channel-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"></circle></svg></div>
+          </a>
         </div>
-        <div class="drg-field"><label data-t="fieldData"></label><input id="fieldData" type="date"></div>
-        <div class="drg-field"><label data-t="fieldMsg"></label><textarea id="fieldMsg" rows="3"></textarea></div>
-        <button class="drg-submit-btn" type="submit" data-t="submit"></button>
-      </form>
+      </div>
     </div>
   </div>
 
@@ -172,7 +228,7 @@
     <div class="drg-footer-inner">
       <div class="drg-footer-grid">
         <div>
-          <div class="drg-footer-logo">DRG<span>TUR</span></div>
+          <div class="drg-footer-logo"><img src="assets/logo-full.png" alt="DRtuR"></div>
           <div class="drg-footer-tagline" data-t="footerTagline"></div>
         </div>
         <div>
@@ -202,13 +258,13 @@
         </div>
       </div>
       <div class="drg-footer-bottom">
-        <div>© 2026 DRGTUR — <span data-t="footerRights"></span></div>
-        <div>Desenvolvido por <a href="https://designcnd.com.br/" target="_blank">CND Design Studio</a></div>
+        <div>© 2026 DRtuR — <span data-t="footerRights"></span></div>
+        <div>Design por <a href="https://designcnd.com.br/" target="_blank">CND Design Studio</a></div>
       </div>
     </div>
   </div>
 
-  <a class="drg-whats-float" target="_blank" href="https://wa.me/554588135191?text=Ol%C3%A1%2C%20vim%20do%20site%20da%20DRGTUR%20e%20quero%20mais%20informa%C3%A7%C3%B5es">
+  <a class="drg-whats-float" target="_blank" href="https://wa.me/554588135191?text=Ol%C3%A1%2C%20vim%20do%20site%20da%20DRtuR%20e%20quero%20mais%20informa%C3%A7%C3%B5es">
     <svg width="68" height="68" viewBox="0 0 32 32" fill="oklch(52% 0.16 148)"><path d="M16.001 3C9.008 3 3.335 8.673 3.335 15.667c0 2.36.65 4.567 1.777 6.457L3 29l7.09-2.06a12.6 12.6 0 0 0 5.911 1.494h.005c6.992 0 12.665-5.673 12.665-12.667C28.671 8.773 22.998 3.1 16.001 3Zm0 23.17h-.004a10.5 10.5 0 0 1-5.35-1.464l-.384-.228-4.208 1.222 1.245-4.104-.25-.42a10.48 10.48 0 0 1-1.607-5.599c0-5.803 4.723-10.526 10.53-10.526 5.804 0 10.527 4.723 10.527 10.526 0 5.804-4.723 10.593-10.53 10.593Zm5.76-7.882c-.316-.158-1.87-.923-2.16-1.028-.29-.106-.502-.158-.712.158-.211.316-.817 1.028-1.002 1.24-.185.21-.37.238-.686.08-.316-.159-1.335-.492-2.542-1.568-.94-.838-1.574-1.873-1.759-2.19-.185-.317-.02-.488.138-.646.142-.142.316-.37.475-.554.158-.185.211-.317.316-.528.106-.211.053-.396-.026-.554-.08-.159-.712-1.715-.976-2.35-.257-.617-.518-.533-.712-.543l-.606-.011c-.211 0-.554.079-.844.396-.29.317-1.106 1.081-1.106 2.637 0 1.556 1.132 3.06 1.29 3.27.158.212 2.229 3.404 5.4 4.775.755.326 1.344.52 1.803.665.758.241 1.448.207 1.994.126.608-.091 1.87-.764 2.134-1.502.264-.738.264-1.37.185-1.502-.079-.132-.29-.211-.606-.37Z"></path></svg>
   </a>
 
