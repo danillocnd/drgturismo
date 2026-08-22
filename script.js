@@ -1204,13 +1204,13 @@ const STR = {
   navDepo:{pt:'Depoimentos',es:'Opiniones'},
   navContato:{pt:'Contato',es:'Contacto'},
   navWhats:{pt:'Fale conosco',es:'Fale conosco'},
-  badge: {pt:'Experiências sem fronteiras', es:'Experiencias sin fronteras'},
+  badge: {pt:'Experiência sem Fronteiras!', es:'¡Experiencia sin Fronteras!'},
   scrollLabel:{pt:'Role para descobrir',es:'Desliza para descubrir'},
   heroTitlePlain:{pt:'Viva a Tríplice Fronteira com',es:'Viva la Triple Frontera con'},
   heroTitleAccent:{pt:'conforto, segurança e leveza',es:'confort, seguridad y tranquilidad'},
   heroSub:{pt:'Roteiros personalizados entre Brasil, Argentina e Paraguai — do primeiro contato até a última foto.',es:'Itinerarios personalizados entre Brasil, Argentina y Paraguay — desde el primer contacto hasta la última foto.'},
   ctaOrc:{pt:'Reserve Já',es:'Reserve Ya'},
-  sobreLabel:{pt:'Sobre a DRtuR',es:'Sobre DRtuR'},
+  sobreLabel:{pt:'Sobre a DRTUR',es:'Sobre DRTUR'},
   sobreTitle:{pt:'Mais do que passeios, uma experiência cuidada do início ao fim',es:'Más que paseos, una experiencia cuidada de principio a fin'},
   sobreBody:{pt:'Trabalhamos com destinos no Brasil, Argentina e Paraguai, criando roteiros sob medida para o perfil de cada viajante. Nosso compromisso é com a praticidade, a segurança e a tranquilidade — para que cada experiência seja leve, especial e inesquecível.',es:'Trabajamos con destinos en Brasil, Argentina y Paraguay, creando itinerarios a medida según el perfil de cada viajero. Nuestro compromiso es con la practicidad, la seguridad y la tranquilidad — para que cada experiencia sea liviana, especial e inolvidable.'},
   sobreCta:{pt:'Ver passeios',es:'Ver paseos'},
@@ -1249,7 +1249,7 @@ const STR = {
   footerRights:{pt:'Todos os direitos reservados.',es:'Todos los derechos reservados.'},
   footerTagline:{pt:'Turismo na Tríplice Fronteira com quem entende do assunto.',es:'Turismo en la Triple Frontera con quien entiende del tema.'},
   instaTitle:{pt:'Já somos mais de 294 pessoas conectadas no Instagram!',es:'¡Ya somos más de 294 personas conectadas en Instagram!'},
-  instaBody:{pt:'Acompanhe os bastidores dos nossos passeios pela Tríplice Fronteira: fotos reais de clientes, dicas de roteiro e novidades da DRtuR direto no feed.',es:'Siga los bastidores de nuestros paseos por la Triple Frontera: fotos reales de clientes, consejos de itinerario y novedades de DRtuR directo en el feed.'},
+  instaBody:{pt:'Acompanhe os bastidores dos nossos passeios pela Tríplice Fronteira: fotos reais de clientes, dicas de roteiro e novidades da DRTUR direto no feed.',es:'Siga los bastidores de nuestros paseos por la Triple Frontera: fotos reales de clientes, consejos de itinerario y novedades de DRTUR directo en el feed.'},
   instaCta:{pt:'Seguir Instagram',es:'Seguir Instagram'}
 };
 
@@ -1293,20 +1293,20 @@ const DIFFS = [
 ];
 
 const TESTIMONIALS = [
-  {quote:{pt:'Conforto, segurança e atenção em cada detalhe. Recomendo para quem quer conhecer os 3 países sem preocupação.', es:'Confort, seguridad y atención en cada detalle. Lo recomiendo para quienes quieren conocer los 3 países sin preocupaciones.'}, name:'Rosália A.'},
-  {quote:{pt:'Foi uma viagem marcante, a pontualidade e o atendimento humanizado fizeram toda a diferença. Com certeza indicaremos para amigos e familiares.', es:'Fue un viaje memorable, la puntualidad y la atención humanizada marcaron la diferencia. Sin duda lo recomendaremos a amigos y familiares.'}, name:'Gilberto M.'},
-  {quote:{pt:'Tudo ocorreu exatamente como combinado: serviço de confiança, veículo confortável e equipe muito prestativa durante toda a viagem.', es:'Todo ocurrió exactamente como se acordó: servicio de confianza, vehículo cómodo y equipo muy atento durante todo el viaje.'}, name:'Emerson S.'}
+  {quote:{pt:'Conforto, segurança e atenção em cada detalhe. Recomendo para quem quer conhecer os 3 países sem preocupação.', es:'Confort, seguridad y atención en cada detalle. Lo recomiendo para quienes quieren conocer los 3 países sin preocupaciones.'}, name:'Rosália A.', photo:'assets/depoimento-rosalia.png'},
+  {quote:{pt:'Foi uma viagem marcante, a pontualidade e o atendimento humanizado fizeram toda a diferença. Com certeza indicaremos para amigos e familiares.', es:'Fue un viaje memorable, la puntualidad y la atención humanizada marcaron la diferencia. Sin duda lo recomendaremos a amigos y familiares.'}, name:'Gilberto M.', photo:'assets/depoimento-gilberto.jpg'},
+  {quote:{pt:'Tudo ocorreu exatamente como combinado: serviço de confiança, veículo confortável e equipe muito prestativa durante toda a viagem.', es:'Todo ocurrió exactamente como se acordó: servicio de confianza, vehículo cómodo y equipo muy atento durante todo el viaje.'}, name:'Emerson S.', photo:'assets/depoimento-emerson.jpg'}
 ];
 
 const FAQ = [
   {q:{pt:'Quais documentos posso usar para entrar na Argentina?', es:'¿Qué documentos puedo usar para entrar a Argentina?'}, a:{pt:'Você pode apresentar um dos seguintes: RG emitido há menos de 10 anos, Passaporte válido ou CNH física dentro da validade.', es:'Puede presentar uno de los siguientes: documento de identidad emitido hace menos de 10 años, pasaporte válido o licencia de conducir física vigente.'}},
-  {q:{pt:'Os transportes da DRtuR têm fila preferencial para entrar na Argentina?', es:'¿Los transportes de DRtuR tienen fila preferencial para entrar a Argentina?'}, a:{pt:'Sim! Nossos veículos têm preferência na fila de imigração. Confirme sua reserva e aproveite melhor o seu tempo de passeio.', es:'¡Sí! Nuestros vehículos tienen preferencia en la fila de inmigración. Confirme su reserva y aproveche mejor su tiempo de paseo.'}},
+  {q:{pt:'Os transportes da DRTUR têm fila preferencial para entrar na Argentina?', es:'¿Los transportes de DRTUR tienen fila preferencial para entrar a Argentina?'}, a:{pt:'Sim! Nossos veículos têm preferência na fila de imigração. Confirme sua reserva e aproveite melhor o seu tempo de passeio.', es:'¡Sí! Nuestros vehículos tienen preferencia en la fila de inmigración. Confirme su reserva y aproveche mejor su tiempo de paseo.'}},
   {q:{pt:'E para entrar no Paraguai, é o mesmo processo?', es:'¿Y para entrar a Paraguay es el mismo proceso?'}, a:{pt:'Não é necessário o mesmo procedimento de imigração da Argentina. Porém, para realizar compras em determinadas lojas, é preciso apresentar RG ou passaporte.', es:'No es necesario el mismo procedimiento de inmigración que en Argentina. Sin embargo, para realizar compras en determinadas tiendas, es necesario presentar documento de identidad o pasaporte.'}},
   {q:{pt:'Qual a cota de compras no Paraguai?', es:'¿Cuál es la cuota de compras en Paraguay?'}, a:{pt:'US$ 500 por pessoa.', es:'US$ 500 por persona.'}},
-  {q:{pt:'É possível conhecer os 3 países em um único dia?', es:'¿Es posible conocer los 3 países en un solo día?'}, a:{pt:'Sim, é possível! Conte com a DRtuR e venha desbravar a Tríplice Fronteira com quem entende do assunto.', es:'¡Sí, es posible! Cuente con DRtuR y venga a descubrir la Triple Frontera con quien entiende del tema.'}},
-  {q:{pt:'A DRtuR também emite ingressos para os atrativos?', es:'¿DRtuR también emite entradas para las atracciones?'}, a:{pt:'Sim! Ao fechar seu transporte conosco, a emissão de ingressos é cortesia — cuidamos de tudo para você, inclusive com sugestões de horários e melhor logística do dia.', es:'¡Sí! Al contratar su transporte con nosotros, la emisión de entradas es cortesía — cuidamos de todo por usted, incluso con sugerencias de horarios y la mejor logística del día.'}},
-  {q:{pt:'A DRtuR tem roteiro fixo? Vou com pessoas desconhecidas?', es:'¿DRtuR tiene un itinerario fijo? ¿Voy con personas desconocidas?'}, a:{pt:'Não! Você escolhe os atrativos que quer conhecer e montamos um roteiro 100% personalizado para você e seu grupo.', es:'¡No! Usted elige las atracciones que quiere conocer y armamos un itinerario 100% personalizado para usted y su grupo.'}},
-  {q:{pt:'Como funcionam os transportes da DRtuR?', es:'¿Cómo funcionan los transportes de DRtuR?'}, a:{pt:'São todos privativos — exclusivos para você, seguindo o roteiro que vocês escolherem. Conte com nossa equipe para dicas e o melhor aproveitamento do seu passeio!', es:'Son todos privados — exclusivos para usted, siguiendo el itinerario que ustedes elijan. ¡Cuente con nuestro equipo para consejos y el mejor aprovechamiento de su paseo!'}},
+  {q:{pt:'É possível conhecer os 3 países em um único dia?', es:'¿Es posible conocer los 3 países en un solo día?'}, a:{pt:'Sim, é possível! Conte com a DRTUR e venha desbravar a Tríplice Fronteira com quem entende do assunto.', es:'¡Sí, es posible! Cuente con DRTUR y venga a descubrir la Triple Frontera con quien entiende del tema.'}},
+  {q:{pt:'A DRTUR também emite ingressos para os atrativos?', es:'¿DRTUR también emite entradas para las atracciones?'}, a:{pt:'Sim! Ao fechar seu transporte conosco, a emissão de ingressos é cortesia — cuidamos de tudo para você, inclusive com sugestões de horários e melhor logística do dia.', es:'¡Sí! Al contratar su transporte con nosotros, la emisión de entradas es cortesía — cuidamos de todo por usted, incluso con sugerencias de horarios y la mejor logística del día.'}},
+  {q:{pt:'A DRTUR tem roteiro fixo? Vou com pessoas desconhecidas?', es:'¿DRTUR tiene un itinerario fijo? ¿Voy con personas desconocidas?'}, a:{pt:'Não! Você escolhe os atrativos que quer conhecer e montamos um roteiro 100% personalizado para você e seu grupo.', es:'¡No! Usted elige las atracciones que quiere conocer y armamos un itinerario 100% personalizado para usted y su grupo.'}},
+  {q:{pt:'Como funcionam os transportes da DRTUR?', es:'¿Cómo funcionan los transportes de DRTUR?'}, a:{pt:'São todos privativos — exclusivos para você, seguindo o roteiro que vocês escolherem. Conte com nossa equipe para dicas e o melhor aproveitamento do seu passeio!', es:'Son todos privados — exclusivos para usted, siguiendo el itinerario que ustedes elijan. ¡Cuente con nuestro equipo para consejos y el mejor aprovechamiento de su paseo!'}},
   {q:{pt:'É necessário levar capa de chuva para as Cataratas?', es:'¿Es necesario llevar impermeable para las Cataratas?'}, a:{pt:'A melhor sugestão é levar uma muda de roupa: assim você sente a energia das cataratas e pode se molhar à vontade!', es:'La mejor sugerencia es llevar una muda de ropa: ¡así siente la energía de las cataratas y puede mojarse a gusto!'}},
   {q:{pt:'Quantos dias preciso para conhecer todos os atrativos da região, incluindo Argentina e Paraguai?', es:'¿Cuántos días necesito para conocer todas las atracciones de la región, incluyendo Argentina y Paraguay?'}, a:{pt:'O ideal são 5 dias, para aproveitar com calma e sem correria.', es:'Lo ideal son 5 días, para aprovechar con calma y sin apuros.'}},
   {q:{pt:'Qual a melhor época para visitar Foz do Iguaçu?', es:'¿Cuál es la mejor época para visitar Foz de Iguazú?'}, a:{pt:'De setembro a abril, o clima é mais quente. De maio a agosto, as temperaturas ficam mais amenas. A região pode ser visitada o ano inteiro!', es:'De septiembre a abril, el clima es más cálido. De mayo a agosto, las temperaturas son más suaves. ¡La región puede visitarse todo el año!'}},
@@ -1363,7 +1363,7 @@ function decorateSectionNumbers(){
 function renderBrandMarquee(){
   const track = document.getElementById('brandMarquee');
   if (!track) return;
-  const phrase = lang === 'pt' ? 'Experiências sem fronteiras' : 'Experiencias sin fronteras';
+  const phrase = lang === 'pt' ? 'Experiência sem Fronteiras' : 'Experiencia sin Fronteras';
   const unit = `<span>${phrase}</span><span class="solid">•</span>`;
   track.innerHTML = unit.repeat(6);
 }
@@ -1427,7 +1427,7 @@ function renderTestimonials(){
   wrap.innerHTML = all.map(tm => `
     <div class="drg-testimonial-card">
       <div class="drg-testi-top">
-        <div class="drg-testi-avatar"><span>foto</span></div>
+        <div class="drg-testi-avatar">${tm.photo ? `<img src="${tm.photo}" alt="${tm.name}" onerror="this.remove()">` : '<span>foto</span>'}</div>
         <div>
           <div class="drg-testi-name">${tm.name}</div>
           <div class="drg-testi-stars">★★★★★</div>
@@ -1549,7 +1549,7 @@ function initForm(){
     const data = document.getElementById('fieldData').value;
     const msg = document.getElementById('fieldMsg').value.trim();
     const lines = [
-      'Olá! Vim pelo site da DRtuR e gostaria de um orçamento.',
+      'Olá! Vim pelo site da DRTUR e gostaria de um orçamento.',
       nome ? `Nome: ${nome}` : '',
       whats ? `WhatsApp: ${whats}` : '',
       destino ? `Destino de interesse: ${destino}` : '',
