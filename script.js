@@ -1238,6 +1238,11 @@ const STR = {
   fieldNome:{pt:'Nome completo',es:'Nombre completo'},
   fieldWhats:{pt:'WhatsApp',es:'WhatsApp'},
   fieldDestino:{pt:'Destino de interesse',es:'Destino de interés'},
+  destinoPlaceholder:{pt:'Selecione um destino',es:'Seleccione un destino'},
+  destinoAdicional:{pt:'Adicionar outro destino (opcional)',es:'Añadir otro destino (opcional)'},
+  destinoMaisPlaceholder:{pt:'Selecione outro destino',es:'Seleccione otro destino'},
+  destinoRemover:{pt:'Remover destino',es:'Eliminar destino'},
+  destinosHint:{pt:'Você pode escolher vários destinos. Ao selecionar um, aparece outro campo opcional.',es:'Puede elegir varios destinos. Al seleccionar uno, aparece otro campo opcional.'},
   fieldPessoas:{pt:'Quantidade de pessoas',es:'Cantidad de personas'},
   fieldOutro:{pt:'Outro',es:'Otro'},
   fieldData:{pt:'Data prevista',es:'Fecha prevista'},
@@ -1248,7 +1253,7 @@ const STR = {
   footerContact:{pt:'Contato',es:'Contacto'},
   footerRights:{pt:'Todos os direitos reservados.',es:'Todos los derechos reservados.'},
   footerTagline:{pt:'Turismo na Tríplice Fronteira com quem entende do assunto.',es:'Turismo en la Triple Frontera con quien entiende del tema.'},
-  instaTitle:{pt:'Já somos mais de 294 pessoas conectadas no Instagram!',es:'¡Ya somos más de 294 personas conectadas en Instagram!'},
+  instaTitle:{pt:'Já somos mais de 300 pessoas conectadas no Instagram!',es:'¡Ya somos más de 300 personas conectadas en Instagram!'},
   instaBody:{pt:'Acompanhe os bastidores dos nossos passeios pela Tríplice Fronteira: fotos reais de clientes, dicas de roteiro e novidades da DRTUR direto no feed.',es:'Siga los bastidores de nuestros paseos por la Triple Frontera: fotos reales de clientes, consejos de itinerario y novedades de DRTUR directo en el feed.'},
   instaCta:{pt:'Seguir Instagram',es:'Seguir Instagram'}
 };
@@ -1295,8 +1300,11 @@ const DIFFS = [
 const TESTIMONIALS = [
   {quote:{pt:'Conforto, segurança e atenção em cada detalhe. Recomendo para quem quer conhecer os 3 países sem preocupação.', es:'Confort, seguridad y atención en cada detalle. Lo recomiendo para quienes quieren conocer los 3 países sin preocupaciones.'}, name:'Rosália A.', photo:'assets/depoimento-rosalia.png'},
   {quote:{pt:'Foi uma viagem marcante, a pontualidade e o atendimento humanizado fizeram toda a diferença. Com certeza indicaremos para amigos e familiares.', es:'Fue un viaje memorable, la puntualidad y la atención humanizada marcaron la diferencia. Sin duda lo recomendaremos a amigos y familiares.'}, name:'Gilberto M.', photo:'assets/depoimento-gilberto.jpg'},
-  {quote:{pt:'Tudo ocorreu exatamente como combinado: serviço de confiança, veículo confortável e equipe muito prestativa durante toda a viagem.', es:'Todo ocurrió exactamente como se acordó: servicio de confianza, vehículo cómodo y equipo muy atento durante todo el viaje.'}, name:'Emerson S.', photo:'assets/depoimento-emerson.jpg'}
-];
+  {quote:{pt:'Tudo ocorreu exatamente como combinado: serviço de confiança, veículo confortável e equipe muito prestativa durante toda a viagem.', es:'Todo ocurrió exactamente como se acordó: servicio de confianza, vehículo cómodo y equipo muy atento durante todo el viaje.'}, name:'Emerson S.', photo:'assets/depoimento-emerson.jpg'},
+  {quote:{pt:'Uma experiência incrível do início ao fim. Fomos muito bem atendidos, com organização, pontualidade e todo o cuidado necessário para tornar nossa viagem ainda mais especial.', es:'Una experiencia increíble de principio a fin. Recibimos una atención excelente, con organización, puntualidad y todo el cuidado necesario para hacer que nuestro viaje fuera aún más especial.'}, name:'Danillo C.', photo:'assets/depoimento-danillo.png'},
+  {quote:{pt:'Tudo foi muito bem organizado e o atendimento superou nossas expectativas. A equipe foi atenciosa, pontual e nos transmitiu muita segurança durante toda a viagem. Recomendamos com certeza!', es:'Todo estuvo muy bien organizado y la atención superó nuestras expectativas. El equipo fue atento, puntual y nos transmitió mucha seguridad durante todo el viaje. ¡Lo recomendamos sin duda!'}, name:'Pablo D.', photo:'assets/depoimento-pablo.jpg'}
+
+  ];
 
 const FAQ = [
   {q:{pt:'Quais documentos posso usar para entrar na Argentina?', es:'¿Qué documentos puedo usar para entrar a Argentina?'}, a:{pt:'Você pode apresentar um dos seguintes: RG emitido há menos de 10 anos, Passaporte válido ou CNH física dentro da validade.', es:'Puede presentar uno de los siguientes: documento de identidad emitido hace menos de 10 años, pasaporte válido o licencia de conducir física vigente.'}},
@@ -1321,6 +1329,7 @@ let lang = 'pt';
 let showAllPackages = false;
 let showAllFaq = false;
 let faqOpen = 0;
+let selectedDestinos = [];
 
 function t(key){ return STR[key][lang]; }
 
@@ -1456,8 +1465,77 @@ function renderFaq(){
 }
 
 function renderDestinoOptions(){
-  const sel = document.getElementById('fieldDestinoSelect');
-  sel.innerHTML = PACKAGES.map(p => `<option>${p.name}</option>`).join('') + `<option>${t('fieldOutro')}</option>`;
+  let wrap = document.getElementById('drgDestinos');
+  if (!wrap) {
+    const field = document.getElementById('fieldDestinoSelect').closest('.drg-field');
+    wrap = document.createElement('div');
+    wrap.id = 'drgDestinos';
+    const hint = document.createElement('p');
+    hint.id = 'drgDestinosHint';
+    hint.className = 'drg-destinos-hint';
+    field.replaceChildren(wrap, hint);
+  }
+  document.getElementById('drgDestinosHint').textContent = t('destinosHint');
+  const choices = PACKAGES.map(p => ({value: p.name, label: p.name}));
+  choices.push({value: '__outro__', label: t('fieldOutro')});
+  const allowed = new Set(choices.map(choice => choice.value));
+  selectedDestinos = [...new Set(selectedDestinos)].filter(value => allowed.has(value));
+  const values = selectedDestinos.slice();
+  if (values.length < choices.length) values.push('');
+
+  while (wrap.children.length > values.length) wrap.lastElementChild.remove();
+  values.forEach((value, index) => {
+    let row = wrap.children[index];
+    if (!row) {
+      row = document.createElement('div');
+      row.className = 'drg-destino-row';
+      const field = document.createElement('div');
+      field.className = 'drg-destino-field';
+      const label = document.createElement('label');
+      const select = document.createElement('select');
+      select.name = 'destinos[]';
+      select.setAttribute('aria-describedby', 'drgDestinosHint');
+      const remove = document.createElement('button');
+      remove.type = 'button';
+      remove.className = 'drg-destino-remove';
+      remove.textContent = '×';
+      select.addEventListener('change', () => {
+        const position = Array.from(wrap.children).indexOf(row);
+        if (select.value) selectedDestinos[position] = select.value;
+        else selectedDestinos.splice(position, 1);
+        renderDestinoOptions();
+        // Keep keyboard focus on the current row when another field is added.
+        wrap.children[Math.min(position, wrap.children.length - 1)].querySelector('select').focus();
+      });
+      remove.addEventListener('click', () => {
+        const position = Array.from(wrap.children).indexOf(row);
+        selectedDestinos.splice(position, 1);
+        renderDestinoOptions();
+        wrap.children[Math.min(position, wrap.children.length - 1)].querySelector('select').focus();
+      });
+      field.append(label, select);
+      row.append(field, remove);
+      wrap.appendChild(row);
+    }
+    const select = row.querySelector('select');
+    select.id = index === 0 ? 'fieldDestinoSelect' : `fieldDestinoSelect${index + 1}`;
+    const label = row.querySelector('label');
+    label.htmlFor = select.id;
+    label.textContent = index === 0 ? t('fieldDestino') : value ? `${t('fieldDestino')} ${index + 1}` : t('destinoAdicional');
+    const placeholder = new Option(t(index === 0 ? 'destinoPlaceholder' : 'destinoMaisPlaceholder'), '', true, !value);
+    select.replaceChildren(placeholder);
+    choices.forEach(choice => {
+      const option = new Option(choice.label, choice.value, false, choice.value === value);
+      option.disabled = choice.value !== value && selectedDestinos.includes(choice.value);
+      select.appendChild(option);
+    });
+    select.value = value;
+    const remove = row.querySelector('button');
+    remove.hidden = !value;
+    const name = choices.find(choice => choice.value === value)?.label || '';
+    remove.setAttribute('aria-label', `${t('destinoRemover')}: ${name}`);
+    remove.title = t('destinoRemover');
+  });
 }
 
 // ============ INTERAÇÕES ============
@@ -1538,13 +1616,35 @@ function initForm(){
   const row = document.getElementById('channelForm');
   const wrap = document.getElementById('channelFormWrap');
   if (row && wrap){
-    row.addEventListener('click', () => wrap.classList.toggle('open'));
+    const syncFormHeight = () => {
+      const height = `${wrap.scrollHeight}px`;
+      if (wrap.style.getPropertyValue('--drg-form-height') !== height) {
+        wrap.style.setProperty('--drg-form-height', height);
+      }
+    };
+    // Observe the content, not the animated wrapper, to avoid resize loops.
+    const formSizeObserver = new ResizeObserver(syncFormHeight);
+    wrap.querySelectorAll('.drg-form-card, .drg-form-sent').forEach(el => formSizeObserver.observe(el));
+    syncFormHeight();
+    row.addEventListener('click', () => {
+      syncFormHeight();
+      wrap.classList.toggle('open');
+    });
   }
+  document.getElementById('drgForm').addEventListener('reset', (e) => {
+    queueMicrotask(() => {
+      if (e.defaultPrevented) return;
+      selectedDestinos = [];
+      renderDestinoOptions();
+      document.querySelector('.drg-form-card').classList.remove('hide');
+      document.querySelector('.drg-form-sent').classList.remove('show');
+    });
+  });
   document.getElementById('drgForm').addEventListener('submit', (e) => {
     e.preventDefault();
     const nome = document.getElementById('fieldNome').value.trim();
     const whats = document.getElementById('fieldWhats').value.trim();
-    const destino = document.getElementById('fieldDestinoSelect').value;
+    const destinos = selectedDestinos.map(value => value === '__outro__' ? t('fieldOutro') : value);
     const pessoas = document.getElementById('fieldPessoas').value;
     const data = document.getElementById('fieldData').value;
     const msg = document.getElementById('fieldMsg').value.trim();
@@ -1552,7 +1652,7 @@ function initForm(){
       'Olá! Vim pelo site da DRTUR e gostaria de um orçamento.',
       nome ? `Nome: ${nome}` : '',
       whats ? `WhatsApp: ${whats}` : '',
-      destino ? `Destino de interesse: ${destino}` : '',
+      destinos.length ? `Destinos de interesse: ${destinos.join('; ')}` : '',
       pessoas ? `Quantidade de pessoas: ${pessoas}` : '',
       data ? `Data prevista: ${data}` : '',
       msg ? `Mensagem: ${msg}` : ''

@@ -286,3 +286,61 @@ body:not(.drg-loaded) .drg-word,body:not(.drg-loaded) .drg-badge,body:not(.drg-l
   *,*::before,*::after{animation:none !important;transition:none !important}
   .drg-reveal,.drg-reveal .drg-stagger-item,.drg-word{opacity:1 !important;transform:none !important}
 }
+
+/* Corrige a altura do menu mobile após rolar a página */
+@media (max-width: 920px) {
+  .drg-nav.scrolled {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+/* Círculo verde — mantém a pulsação atual */
+.drg-whats-float {
+  background: #25d366;
+  border-radius: 50%;
+}
+
+/* Ícone branco, inclusive depois de rolar */
+.drg-whats-float svg,
+.drg-whats-float.scrolled svg {
+  width: 45px;
+  height: 45px;
+  fill: #fff;
+}
+
+/* Destinos de interesse: selecao progressiva de varios passeios */
+.drg-channel-form-wrap.open { max-height: var(--drg-form-height, 1400px); }
+#drgDestinos { display: grid; gap: 12px; }
+.drg-destino-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 8px;
+}
+.drg-destino-field { min-width: 0; }
+.drg-destino-remove {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 8px 10px;
+  border: 1px solid #ccd4df;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--navy);
+  font: 600 12px 'Montserrat', sans-serif;
+  cursor: pointer;
+}
+.drg-destino-remove:hover { background: #e7edf6; }
+.drg-destino-remove:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+}
+.drg-destino-remove[hidden] { display: none; }
+.drg-form-card .drg-destinos-hint {
+  margin: 8px 0 0;
+  font: 400 12px/1.5 'Montserrat', sans-serif;
+  color: #526075;
+}
+@media (max-width: 640px) {
+  #drgDestinos select { font-size: 16px; }
+}
