@@ -180,6 +180,8 @@ body:not(.drg-loaded) .drg-word,body:not(.drg-loaded) .drg-badge,body:not(.drg-l
 .drg-marquee.is-paused{animation-play-state:paused}
 @media (max-width:760px){.drg-marquee{animation-duration:80s}}
 .drg-testimonial-card{flex:0 0 clamp(300px,44vw,640px);background:color-mix(in srgb, var(--navy) 72%, transparent);backdrop-filter:blur(8px);border-radius:20px;padding:32px;display:flex;flex-direction:column;gap:18px}
+/* Impede seleção e menu de texto ao segurar os depoimentos no celular. */
+.drg-testimonial-card,.drg-testimonial-card *{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
 @media (max-width:700px){ .drg-testimonial-card{flex:0 0 86vw !important} }
 .drg-testi-top{display:flex;align-items:center;gap:14px}
 .drg-testi-avatar{width:52px;height:52px;border-radius:50%;flex:none;overflow:hidden;background:repeating-linear-gradient(45deg, var(--cyan), var(--cyan) 6px, color-mix(in srgb, var(--cyan) 80%, white) 6px, color-mix(in srgb, var(--cyan) 80%, white) 12px);display:flex;align-items:center;justify-content:center}
