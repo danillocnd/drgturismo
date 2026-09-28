@@ -1430,6 +1430,59 @@ function renderPackages(){
     </div>`).join('');
 }
 
+function initTestimonialMarquee(){
+  const track = document.getElementById('marqueeTrack');
+  if (!track || track.dataset.pauseReady === 'true') return;
+  track.dataset.pauseReady = 'true';
+
+  const activeTouches = new Set();
+  const mouseHover = window.matchMedia('(hover: hover) and (pointer: fine)');
+  let mouseInside = false;
+  const syncPause = () => {
+    track.classList.toggle('is-paused', mouseInside || activeTouches.size > 0);
+  };
+  const resetPause = () => {
+    activeTouches.clear();
+    mouseInside = false;
+    syncPause();
+  };
+
+  // A real mouse may pause on hover; emulated touch hover must not stay stuck.
+  track.addEventListener('pointerenter', event => {
+    if (event.pointerType !== 'mouse' || !mouseHover.matches) return;
+    mouseInside = true;
+    syncPause();
+  });
+  track.addEventListener('pointerleave', event => {
+    if (event.pointerType !== 'mouse') return;
+    mouseInside = false;
+    syncPause();
+  });
+
+  // Track only fingers that began here. Passive listeners preserve page scroll.
+  track.addEventListener('touchstart', event => {
+    mouseInside = false;
+    for (const touch of event.changedTouches) activeTouches.add(touch.identifier);
+    syncPause();
+  }, {passive: true});
+  const releaseTouches = event => {
+    for (const touch of event.changedTouches) activeTouches.delete(touch.identifier);
+    syncPause();
+  };
+  // Release still works if a finger ends outside the card or scrolling cancels it.
+  window.addEventListener('touchend', releaseTouches, {passive: true, capture: true});
+  window.addEventListener('touchcancel', releaseTouches, {passive: true, capture: true});
+  window.addEventListener('blur', resetPause);
+  window.addEventListener('pageshow', resetPause);
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) resetPause();
+  });
+  mouseHover.addEventListener('change', () => {
+    if (!mouseHover.matches) mouseInside = false;
+    syncPause();
+  });
+}
+
 function renderTestimonials(){
   const wrap = document.getElementById('marqueeTrack');
   const all = TESTIMONIALS.concat(TESTIMONIALS);
@@ -1738,6 +1791,7 @@ function initParallax(){
 
 document.addEventListener('DOMContentLoaded', () => {
   renderAll();
+  initTestimonialMarquee();
   initNav();
   initPackagesToggle();
   initFaqToggle();

@@ -177,7 +177,8 @@ body:not(.drg-loaded) .drg-word,body:not(.drg-loaded) .drg-badge,body:not(.drg-l
 .drg-depo-head .drg-h2{color:#F2F6FB}
 .drg-marquee-mask{max-width:1400px;margin:0 auto;overflow:hidden;-webkit-mask-image:linear-gradient(90deg, transparent, black 6%, black 94%, transparent);mask-image:linear-gradient(90deg, transparent, black 6%, black 94%, transparent)}
 .drg-marquee{display:flex;gap:24px;width:max-content;animation:drgMarquee 32s linear infinite}
-.drg-marquee:hover{animation-play-state:paused}
+.drg-marquee.is-paused{animation-play-state:paused}
+@media (max-width:760px){.drg-marquee{animation-duration:80s}}
 .drg-testimonial-card{flex:0 0 clamp(300px,44vw,640px);background:color-mix(in srgb, var(--navy) 72%, transparent);backdrop-filter:blur(8px);border-radius:20px;padding:32px;display:flex;flex-direction:column;gap:18px}
 @media (max-width:700px){ .drg-testimonial-card{flex:0 0 86vw !important} }
 .drg-testi-top{display:flex;align-items:center;gap:14px}
